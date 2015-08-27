@@ -1,10 +1,14 @@
-/**
- * funciones y variables de inicializacion del mapa
+/*
+ *   (\_/)   
+ *   ('.')   @version: 0.1
+ *  (")_(")  @author: Yohanna Etchemendy, Nicolás Lound
  *
- * @author      Yohanna Etchemendy, Nicolás Lound
- * @version     0.1
+ *  Inicializacion del mapa 
+ *  Google Analytics
  *
  */
+
+
 
 'use strict'
 var capas;
