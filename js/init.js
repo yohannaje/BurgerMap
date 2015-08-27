@@ -1,23 +1,19 @@
 /*
- *   (\_/)   
- *   ('.')   @version: 0.1
- *  (")_(")  @author: Yohanna Etchemendy, Nicolás Lound
- *
  *  Inicializacion del mapa 
  *  Google Analytics
  *
+ *  @version: 0.1
+ *  @author: Yohanna Etchemendy, Nicolás Lound
+ *
+ *
  */
 
-
-
 'use strict'
+
 var capas;
 var capaInfowindows;
 
-
-/**
-* @abstract     Instancio el mapa
-*/      
+// Instancio el mapa
 var visualizacion = cartodb.createVis(mapa, 'https://0xbunny.cartodb.com/api/v2/viz/14e5e5d8-2fcc-11e5-b510-0e0c41326911/viz.json')
     .done(function(vis,layers) {
         capas = vis.map;
