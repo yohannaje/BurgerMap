@@ -14,7 +14,7 @@ var capas;
 var capaInfowindows;
 
 // Instancio el mapa
-var visualizacion = cartodb.createVis(mapa, 'https://0xbunny.cartodb.com/api/v2/viz/14e5e5d8-2fcc-11e5-b510-0e0c41326911/viz.json')
+var visualizacion = cartodb.createVis(mapa, 'https://burgermap.cartodb.com/api/v2/viz/b541a732-4d28-11e5-ab15-0e018d66dc29/viz.json')
     .done(function(vis,layers) {
         capas = vis.map;
         capaInfowindows = layers[1];
