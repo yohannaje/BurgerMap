@@ -10,15 +10,21 @@
 
 'use strict'
 
-var capas;
-var capaInfowindows;
-
 // Instancio el mapa
-var visualizacion = cartodb.createVis(mapa, 'https://burgermap.cartodb.com/api/v2/viz/b541a732-4d28-11e5-ab15-0e018d66dc29/viz.json')
-    .done(function(vis,layers) {
-        capas = vis.map;
-        capaInfowindows = layers[1];
+cartodb.createVis('mapa', 'https://burgermap.cartodb.com/api/v2/viz/b541a732-4d28-11e5-ab15-0e018d66dc29/viz.json')
+  .done(function(vis, layers) {
+    layers[1].setInteraction(true);
+    layers[1].on('featureClick', function(e, latlng, pos, data) {
+        //completo la barra lateral sin infowindows
+        openJoint(data.hamburgueseria, data.direccion)
     });
+  });
+
+function openJoint(name, addr){
+    document.getElementById("nombre").innerHTML = name;
+    document.getElementById("direccion").innerHTML = addr;
+    return false;
+}
 
 
 // Google Analytics

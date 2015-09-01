@@ -1,0 +1,68 @@
+<html>
+<head>
+  <link rel="stylesheet" href="http://libs.cartocdn.com/cartodb.js/v3/themes/css/cartodb.css" />
+  <script src="http://libs.cartocdn.com/cartodb.js/v3/cartodb.js"></script>
+  <!--[if lte IE 8]>
+    <link rel="stylesheet" href="http://libs.cartocdn.com/cartodb.js/v2/themes/css/cartodb.ie.css" />
+  <![endif]-->
+  <style>
+    html, body {width:100%; height:100%; padding: 0; margin: 0;}
+    #mapa { width: 100%; height:100%; background: black;}
+  </style>
+
+  <script>
+    function init(){
+      // initiate leaflet map
+var layerUrl = "https://burgermap.cartodb.com/api/v2/viz/b541a732-4d28-11e5-ab15-0e018d66dc29/viz.json";
+
+    var map = cartodb.createVis(mapa, layerUrl);
+
+
+
+
+cartodb.createLayer(mapa, layerUrl)
+       .addTo(map)
+       .on('done', function(layer) {
+        
+  // change the query for the first layer
+
+  var sublayer = layer.getSubLayer(0);
+
+  sublayer.infowindow.set('template', $('#infowindow_template').html());
+        
+  sublayer.on('featureClick', function(e, latlng, pos, data) {
+          alert("Hey! You clicked " + data.cartodb_id);
+    });
+  }).on('error', function() {
+        //log the error
+});
+
+
+
+    }
+  </script>
+</head>
+<body onload="init()">
+  <div id='mapa'></div>
+
+
+
+<script type="infowindow/html" id="infowindow_template">
+  <div class="cartodb-popup">
+    <a href="#close" class="cartodb-popup-close-button close">x</a>
+     <div class="cartodb-popup-content-wrapper">
+       <div class="cartodb-popup-header">
+         <img style="width: 100%" src="http://cartodb.com/assets/logos/logos_full_cartodb_light.png"></src>
+       </div>
+       <div class="cartodb-popup-content">
+         <!-- content.data contains the field info -->
+         <h4>City: </h4>
+         <p>{{content.data.name}}</p>
+       </div>
+     </div>
+     <div class="cartodb-popup-tip-container"></div>
+  </div>
+</script>
+
+</body>
+</html>
