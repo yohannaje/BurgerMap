@@ -21,8 +21,7 @@ cartodb.createVis('mapa', 'https://burgermap.cartodb.com/api/v2/viz/b541a732-4d2
   });
 
 function openJoint(name, addr){
-    document.getElementById("nombre").innerHTML = name;
-    document.getElementById("direccion").innerHTML = addr;
+    console.log (name,addr);
     return false;
 }
 

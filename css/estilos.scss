@@ -1,0 +1,30 @@
+html,body{
+	height: 100%;
+	width: 100%;
+	padding: 0px;
+	margin: 0px;
+}
+
+#header{
+	position: fixed;
+	width: 100%;
+	height: 50px;
+	background: url("img/title.png") no-repeat center center;	
+	background-color: #DA6273;
+	z-index: 999;
+}
+
+#mapa{
+	height: 100%;
+	width: 100%;
+}
+
+
+//sobreescribo estilos de carto
+.cartodb-zoom{
+	margin: 70px 0 0 20px !important;
+}
+
+.cartodb-infowindow{
+	display: none !important;
+}
