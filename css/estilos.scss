@@ -22,9 +22,17 @@ html,body{
 
 //sobreescribo estilos de carto
 .cartodb-zoom{
-	margin: 70px 0 0 20px !important;
+	margin: 70px 20px 0 0 !important;
+	float: right !important;
+
 }
 
+.cartodb-tiles-loader{
+	float: right !important;
+	margin: 0 20px 0 0 !important;
+	
+}
 .cartodb-infowindow{
 	display: none !important;
 }
+
