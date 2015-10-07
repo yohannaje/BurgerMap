@@ -16,7 +16,7 @@ module.exports = function (grunt) {
                 tasks: ['sass','cssmin','clean','beep:2']
             },
             js: {
-                files: ['js/init.js'],
+                files: ['js/init.js', 'js/funciones.js'],
                 tasks: ['uglify','beep:2']
             }
         },
@@ -31,7 +31,7 @@ module.exports = function (grunt) {
         uglify: {
             dist: {
               files: {
-                'js/init.min.js': 'js/init.js'
+                'js/main.min.js': ['js/init.js', 'js/funciones.js']
               }
             }
         },

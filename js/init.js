@@ -15,15 +15,37 @@ cartodb.createVis('mapa', 'https://burgermap.cartodb.com/api/v2/viz/b541a732-4d2
   .done(function(vis, layers) {
     layers[1].setInteraction(true);
     layers[1].on('featureClick', function(e, latlng, pos, data) {
-        //completo la barra lateral sin infowindows
-        openJoint(data.hamburgueseria, data.direccion)
+        openJoint(data)
     });
   });
 
-function openJoint(name, addr){
-    console.log (name,addr);
+function openJoint(data){
+    openSidebar();
+    //$("#picture").html("foto");
+    $("#name").html(data.nombre);
+    $("#type").html(data.tipo);
+    $("#addr").html(data.direccion);
+    $("#phon").html(data.telefono);
+    $("#web").html("<a href='"+data.web+"' target='_blank'>página web</a>");
     return false;
 }
+
+function openSidebar(){
+    $("#sidebar").animate({left: "0"}, 200)
+    return false;
+}
+
+function closeSidebar(){
+    var ancho = $("#sidebar").height() * -1;
+    $("#sidebar").animate({left: ancho}, 500)
+    return false;
+}
+
+
+$( "#cerrar" ).click(function() {
+    closeSidebar();
+    return false;
+});
 
 
 // Google Analytics
@@ -41,3 +63,6 @@ function openJoint(name, addr){
 
 ga('create', 'UA-65625200-1', 'auto');
 ga('send', 'pageview');
+
+
+    

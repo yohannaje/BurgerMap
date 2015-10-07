@@ -1,8 +1,22 @@
+@import "mixins/breakpoint.scss";
+@import "mixins/opacity.scss";
+@import "mixins/shadow.scss";
+
+//fonts
+@import url(https://fonts.googleapis.com/css?family=Oxygen);
+
+//colors
+$orange: #f5a623;
+$translucent-black: rgba(44,44,44,0.8);
+$translucent-white: rgba(255,255,255,0.3);
+$white: #ffffff;
+
 html,body{
 	height: 100%;
 	width: 100%;
 	padding: 0px;
 	margin: 0px;
+	font-family: "oxigen", Arial, sans-serif;
 }
 
 #header{
@@ -10,15 +24,92 @@ html,body{
 	width: 100%;
 	height: 50px;
 	background: url("img/title.png") no-repeat center center;	
-	background-color: #DA6273;
+	background-color: $orange;
 	z-index: 999;
+	@include shadow(1);
 }
 
 #mapa{
 	height: 100%;
 	width: 100%;
+	z-index: 500;
 }
 
+#sidebar{
+	position: absolute;
+	top: 0px;
+	left: -250px;
+	height: 100%;
+	width: 220px;
+	background-color: $translucent-black;
+	z-index: 600;
+	@include shadow(1);
+}
+
+#data{
+	opacity: 1;
+	color: $white;
+	font-size: 10px;
+	padding: 5px 20px 5px 10px;
+	span{
+		padding-top: 5px;
+		padding-bottom: 5px;
+	}
+    #name{
+		font-size: 12px;
+		font-weight: bold;
+    }
+    #type{
+		font-size: 12px;
+    }
+    #addr{
+		font-size: 12px;
+    }
+    #phon{
+   		font-size: 12px;
+	}
+    #web{
+		font-size: 12px;
+		a {
+			text-decoration: none;
+			color: $white;
+		}
+    }
+}
+
+#picture{
+	width: 100%;
+	height: 90px;
+	background: #000000 url("img/burger.jpg") no-repeat center center;
+	background-size: cover;
+}
+
+
+#spacing{
+	width: 100%;
+	height: 50px;
+}
+
+
+#cerrar{
+	background: transparent url("img/cerrar.svg")  no-repeat center center;
+	background-size: cover;
+	width: 30px;
+	height: 30px;
+	margin: 5px 5px auto;
+	cursor: pointer; 
+	float: right;
+	-webkit-transition: all 0.2s ease-in-out;
+	-moz-transition:    all 0.2s ease-in-out;
+	-o-transition:      all 0.2s ease-in-out;
+	-ms-transition:     all 0.2s ease-in-out;	
+}
+#cerrar:hover{
+	-webkit-transform: rotate(90deg);
+	-moz-transform:    rotate(90deg);
+	-o-transform:      rotate(90deg);
+	-ms-transform:     rotate(90deg);
+}
 
 //sobreescribo estilos de carto
 .cartodb-zoom{
@@ -35,4 +126,5 @@ html,body{
 .cartodb-infowindow{
 	display: none !important;
 }
+
 

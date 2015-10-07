@@ -12,6 +12,7 @@
     <link rel="apple-touch-icon" href="apple-touch-icon.png">
     <link rel="stylesheet" href="http://libs.cartocdn.com/cartodb.js/v3/3.15/themes/css/cartodb.css" />    
     <script src="http://libs.cartocdn.com/cartodb.js/v3/3.15/cartodb.js"></script>
+    <script src="js/jquery-2.1.3.min.js"></script>
     <link rel="stylesheet" href="css/estilos.min.css">
     <!--[if lt IE 9]>
         <script src="js/html5shiv.js"></script>
@@ -20,10 +21,23 @@
 
 <body>
 
-    <div id="header"> </div>
+    <div id="header"></div>
+    <div id="sidebar">
+        <div id="spacing"></div>
+        <div id="cerrar"></div>
+        <div id="picture"></div>
+        <div id="data">
+            <div id="name">-</div>
+            <div id="type">-</div>
+            <span>Dirección:<div id="addr">-</div></span>
+            <span>Teléfono:<div id="phon">-</div></span>
+            <div id="web">-</div>
+
+        </div>
+
+    </div>
     <div id="mapa"></div>
 
-    <script src="js/init.min.js"></script>
-
+    <script src="js/main.min.js"></script>
 </body>
 </html>
